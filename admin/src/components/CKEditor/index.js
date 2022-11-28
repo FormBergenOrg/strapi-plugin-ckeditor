@@ -46,7 +46,7 @@ const Editor = ({ onChange, name, value, disabled }) => {
             return asset.formats[a].width - asset.formats[b].width;
           });
           keys.map((k) => {
-            let str = prefixFileUrlWithBackendUrl(asset.formats[k].url) + ` ${asset.formats[k].width}w,`;
+            let str = asset.formats[k].url + ` ${asset.formats[k].width}w,`;
             set = set + str;
           });
           const imgTag = `<img src="${asset.url}" alt="${asset.alt}" srcset="${set}"></img>`;

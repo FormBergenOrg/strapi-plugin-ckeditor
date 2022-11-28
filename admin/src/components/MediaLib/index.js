@@ -1,5 +1,5 @@
 import React from "react";
-import { prefixFileUrlWithBackendUrl, useLibrary } from "@strapi/helper-plugin";
+import { useLibrary } from "@strapi/helper-plugin";
 import PropTypes from "prop-types";
 
 const MediaLib = ({ isOpen, onChange, onToggle }) => {
@@ -9,7 +9,7 @@ const MediaLib = ({ isOpen, onChange, onToggle }) => {
   const handleSelectAssets = (files) => {
     const formattedFiles = files.map((f) => ({
       alt: f.alternativeText || f.name,
-      url: prefixFileUrlWithBackendUrl(f.url),
+      url: f.url,
       mime: f.mime,
       formats: f.formats
     }));
